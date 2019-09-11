@@ -2,12 +2,10 @@
 <script>
 /* 
 mostrar, temporalidad del texto, regrese al estado inicial
-setTimeout(toggle, 3000)
-funcion que contenga el timeout y
+funcion que contenga el timeout
  */
 
 import Elemento from '../src/componentes/Elemento.svelte';
-
 
 
 	let elemento = { activo: false };
@@ -18,11 +16,16 @@ import Elemento from '../src/componentes/Elemento.svelte';
 		//setTimeout(toggle,5000)
 		
 	}
+	
+	setTimeout(() => {
+  toggle()  
+},5000)
+
+
 </script>
 
 
 <style>
-	
 </style>
 
 
@@ -33,7 +36,6 @@ import Elemento from '../src/componentes/Elemento.svelte';
 	<Elemento texto={'Maya'}/>
 	
 {:else}
-
 	<button on:click={toggle}>
 		Mostrar
 	</button>
