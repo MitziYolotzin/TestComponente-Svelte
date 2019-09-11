@@ -15,7 +15,7 @@ import Elemento from '../src/componentes/Elemento.svelte';
 	function toggle() {
 		elemento.activo = !elemento.activo;
 
-		setTimeout(toggle,5000)
+		//setTimeout(toggle,5000)
 		
 	}
 </script>
@@ -32,13 +32,13 @@ import Elemento from '../src/componentes/Elemento.svelte';
 	</button>
 	<Elemento texto={'Maya'}/>
 	
-{/if}
+{:else}
 
-
-{#if !elemento.activo}
 	<button on:click={toggle}>
 		Mostrar
 	</button>
 	
 {/if}
+
+
 
