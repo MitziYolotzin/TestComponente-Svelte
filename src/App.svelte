@@ -4,7 +4,7 @@
 
   let elemento = { activo: false };
 
-  function toggle() {
+  function MostrarElemento() {
     elemento.activo = !elemento.activo;
     setTimeout(() => {
       if (elemento.activo) {
@@ -13,16 +13,15 @@
     }, 4000);
   }
 
-//let disabled = { activo: false };
 
 let elementoDos = { activo: false };
 
-  function toggleSecond() {
+  function MostrarElementoDos() {
     elementoDos.activo = !elementoDos.activo;
     setTimeout(() => {
       if (elementoDos.activo) {
         elementoDos.activo = false;
-        //disabled.activo = true;
+        
       }
     }, 4000);
   }
@@ -35,37 +34,26 @@ let elementoDos = { activo: false };
 
 </style>
 
-<!-- {#if elemento.activo}
-  <button on:click={toggle}>Ocultar</button>
-  <Elemento texto={'Maya'} />
-{:else}
-  <button on:click={toggle}>Mostrar</button>
-{/if} -->
+
 
 {#if elemento.activo}
-	<button on:click={toggle}>Ocultar</button>
+	<button on:click={MostrarElemento}>Ocultar</button>
   <Elemento texto={'Maya'} />
 {:else if elementoDos.activo }
-  <button disabled={true} on:click={toggle}>Mostrar</button>
+  <button disabled={true} on:click={MostrarElemento}>Mostrar</button>
 {:else}
-  <button disabled={false} on:click={toggle}>Mostrar</button>
+  <button disabled={false} on:click={MostrarElemento}>Mostrar</button>
 {/if}
 
 
-<!-- {#if elementoDos.activo}
-  <button on:click={toggleSecond}>Ocultar</button>
-  <ElementoBotonDos texto={'Nahuátl'} />
-{:else}
-  <button disabled={toggle= true} on:click={toggleSecond}>Mostrar</button>
-{/if} -->
 
 {#if elementoDos.activo}
-	<button on:click={toggleSecond}>Ocultar</button>
+	<button on:click={MostrarElementoDos}>Ocultar</button>
   <ElementoBotonDos texto={'Nahuátl'} />
 {:else if elemento.activo }
-  <button disabled={true} on:click={toggleSecond}>Mostrar</button>
+  <button disabled={true} on:click={MostrarElementoDos}>Mostrar</button>
 {:else}
-  <button disabled={false} on:click={toggleSecond}>Mostrar</button>
+  <button disabled={false} on:click={MostrarElementoDos}>Mostrar</button>
 {/if}
 
 
